@@ -1,0 +1,23 @@
+<div class="rating-container">
+  <Input 
+    @type="checkbox" 
+    @checked={{@rating.include}} 
+    class="include-rating"
+    {{on "change" (fn this.handleIncludeChange)}}
+  />
+
+  <span>
+    {{#if @rating.typeName}}
+      {{@rating.typeName}}
+    {{else}}
+      {{i18n "composer.your_rating"}}
+    {{/if}}
+  </span>
+
+  <StarRating
+    @enabled={{@rating.include}}
+    @rating={{@rating.value}}
+    @onRatingChange={{this.handleRatingValueChange}}
+    {{on "click" this.triggerUpdateRating}}
+  />
+</div>

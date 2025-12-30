@@ -1,0 +1,5 @@
+<span class="star-rating">
+  {{#each this.stars as |star|}}
+    <RatingStar @value={{star}} @rating={{@rating}} @enabled={{this.enabled}} /><i></i>
+  {{/each}}
+</span>
